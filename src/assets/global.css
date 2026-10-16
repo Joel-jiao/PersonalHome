@@ -1,0 +1,70 @@
+/* 引入 Element Plus 深色模式变量（通过 html.dark class 触发） */
+html.dark {
+  color-scheme: dark;
+}
+
+/* 全局变量，与 Element Plus 主题联动 */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --card-bg: #f7f7f7;
+    --primary: #409eff;
+    --input-bg: #fff;
+    --input-border: #dcdfe6;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+:root[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #eeeeee;
+    --card-bg: #1f1f1f;
+    --primary: #409eff;
+    --input-bg: #2b2b2b;
+    --input-border: #444444;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* 重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    padding: 24px 20px;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 让 Element Plus 组件在 data-theme="dark" 时也生效 */
+:root[data-theme="dark"] {
+    --el-bg-color: #141414;
+    --el-bg-color-overlay: #1d1e1f;
+    --el-text-color-primary: #e5eaf3;
+    --el-text-color-regular: #cfd3dc;
+    --el-text-color-secondary: #a3a6ad;
+    --el-text-color-placeholder: #8d9097;
+    --el-border-color: #4c4d4f;
+    --el-border-color-light: #414243;
+    --el-fill-color: #303133;
+    --el-fill-color-light: #262727;
+    --el-fill-color-lighter: #1d1e1f;
+    --el-mask-color: rgba(0, 0, 0, 0.5);
+    --el-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72);
+}
+
+/* 页面容器通用样式 */
+.page-container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* 过渡动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
